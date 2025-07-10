@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Hands-on Project 1-4</title>
    <link rel="stylesheet" href="styles.css" />
-  <script src="project01-04.js"></script>
+  <script src="project01-04_txt.js"></script>
 </head>
 
 <body>
@@ -34,8 +34,8 @@
             <label for="homeoption" id="homeaddr">
                <div>Home</div>
                   <script>
-                     document.write("<h2>Home Address</h2>");
-                     document.write("<p>" + "1 Main St." + ", " + "Sicilia" + ", " + "MA" + ", " + "02103" + "</p>");
+                     document.write(homeStreet + "<br>");
+                     document.write(homeCity + "," + homeState + " " + homeCode);
                   </script>
                <input id="homeoption" type="radio" name="address"
                onclick="document.getElementById('street').value = homeStreet;
@@ -46,8 +46,8 @@
             <label for="workoption" id="workaddr">
                <div>Work</div>
                <script>
-                  document.write("<h2>Work Address</h2>");
-                  document.write("<p>" + "15 Oak Ln." + ", " + "Central City" + ", " + "MA" + ", " + "02104" + "</p>");
+                  document.write(workStreet + "<br>");
+                  document.write(workCity + "," + workState + " " + workCode);
                </script>
                <input id="workoption" type="radio" name="address"
                   onclick="document.getElementById('street').value = workStreet;
