@@ -21,37 +21,35 @@ let reviews = [
 ];
 let reviewTitles = ["My Favorite Workout Game", "Poor Choreography", "Buggy with Poor Tech Support", "Nice Improvement"];
 
-// Define the starImages() function
 function starImages(rating) {
-  let imageText = "";
-  for (let i = 1; i <= rating; i++) {
-    imageText += "<img src='star.png' alt=''>";
-  }
-  return imageText;
+   let imageText = "";
+   for (let i = 1; i <= rating; i++) {
+      imageText += "<img src='star.png' alt=''>";
+   }
+   return imageText;
 }
 
-// Create the loop to process each review
 for (let i = 0; i < reviewers.length; i++) {
-  let reviewCode = "";
+   let reviewCode = "";
 
-  // Conditional for table class based on reviewType
-  if (reviewType[i] === "P") {
-    reviewCode += "<table class='prime'>";
-  } else if (reviewType[i] === "N") {
-    reviewCode += "<table class='new'>";
-  } else {
-    reviewCode += "<table>";
-  }
+   if (reviewType[i] === "P") {
+      reviewCode += "<table class='prime'>";
+   } else if (reviewType[i] === "N") {
+      reviewCode += "<table class='new'>";
+   } else {
+      reviewCode += "<table>";
+   }
 
-  // Add the review content
-  reviewCode += "<tr><th>" + reviewTitles[i] + "</th></tr>";
-  reviewCode += "<tr><td><strong>" + reviewers[i] + "</strong><br>";
-  reviewCode += reviewDates[i] + "</td></tr>";
-  reviewCode += "<tr><td>" + reviews[i] + "</td></tr>";
-  reviewCode += "<tr><td>" + starImages(stars[i]) + "</td></tr>";
-  reviewCode += "</table>";
+   reviewCode += "<caption>" + reviewTitles[i] + "</caption>";
+   reviewCode += "<tr><th>By</th><td>" + reviewers[i] + "</td></tr>";
+   reviewCode += "<tr><th>Review Date</th><td>" + reviewDates[i] + "</td></tr>";
+   reviewCode += "<tr><th>Rating</th><td>" + starImages(stars[i]) + "</td></tr>";
+   reviewCode += "<tr><td colspan='2'>" + reviews[i] + "</td></tr>";
+   reviewCode += "</table>";
 
-  // Insert the review into the <article> element
-  let article = document.getElementsByTagName("article")[0];
-  article.insertAdjacentHTML("beforeend", reviewCode);
+   // Insert into <article> tag
+   let article = document.getElementsByTagName("article")[0];
+   article.insertAdjacentHTML("beforeend", reviewCode);
 }
+
+
