@@ -32,7 +32,7 @@ let htmlCode = "";
 // Create a for loop to build the HTML
 for (let i = 0; i < captions.length; i++) {
   htmlCode += `<figure>
-                  <img src="photo${i}.jpg" alt="${captions[i]}">
+                  <img src="slide${i}.jpg" alt="${captions[i]}">
                   <figcaption>${captions[i]}</figcaption>
                </figure>`;
 }
